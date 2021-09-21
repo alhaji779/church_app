@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="general_synod_tree">
+      <field name="name">general_synod</field>
+      <field name="model">general.synod</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+         <field name="gen_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="general_synod_form" model="ir.ui.view">
+        <field name="name">general_synod_form</field>
+        <field name="model">general.synod</field>
+        <field name="arch" type="xml">
+            <form string="Synod">                
+                <sheet>
+      
+                <group >
+                    <group >
+                        <field name="name"/>    
+                        <field name="gen_id"/>               
+                    </group>
+                </group>   
+                <notebook>
+                        <page string="PRESBYTERY">
+                            <field name="pres_b" context="{'default_syn_id':id}" />
+                        </page>
+                </notebook>       
+               
+                </sheet>             
+            </form>
+        </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="action_general_synod">
+      <field name="name">Synod </field>
+      <field name="res_model">general.synod</field>
+      <field name="view_type">form</field>
+      <field name="view_id" ref="general_synod_tree"/>
+    </record>
+
+
+    <menuitem name="Configuration" id="church_app_config" parent="church_app.menu_root"/>    
+    
+    
+    <menuitem name="Synod" id="gen_synod_menu" parent="church_app_config"
+              action="action_general_synod" sequence="10"/>
+    <!-- <menuitem name="Server to list" id="church_app" parent="church_app.menu_2"
+              action="church_app.action_server"/> -->
+    
+  </data>
+</odoo>

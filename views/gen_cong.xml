@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="general_congregate_tree">
+      <field name="name">general_congregate</field>
+      <field name="model">general.congregate</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="gen_id"/> 
+          <field name="syn_id"/> 
+          <field name="pres_id"/>  
+          <field name="parish_id"/> 
+         
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="general_congregate_form" model="ir.ui.view">
+        <field name="name">general_congregate_form</field>
+        <field name="model">general.congregate</field>
+        <field name="arch" type="xml">
+            <form string="Congregation">                
+                <sheet>
+      
+                <group >
+                    <group >
+                        <field name="name"/>  
+                        <field name="gen_id"/> 
+                        <field name="syn_id"/> 
+                        <field name="pres_id"/>  
+                        <field name="parish_id"/>                
+                    </group>
+                </group>  
+                <notebook>
+                        <page string="MEMBERS">
+                            <field name="member" context="{'default_cong_id2':id}" />
+                        </page>
+                </notebook>       
+               
+                </sheet>             
+            </form>
+        </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="action_general_congregate">
+      <field name="name">Congregation</field>
+      <field name="res_model">general.congregate</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    
+    
+    
+    
+    <menuitem name="Congregation" id="gen_congregate_menu" parent="church_app_config"
+              action="action_general_congregate" sequence="40"/>
+    <!-- <menuitem name="Server to list" id="church_app" parent="church_app.menu_2"
+              action="church_app.action_server"/> -->
+    
+  </data>
+</odoo>

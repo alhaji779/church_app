@@ -1,0 +1,116 @@
+<odoo>
+   <data>
+      <template id="res">
+         <!--  <t t-call="website.layout"> -->
+            <t t-call="web_planner.page">
+              <t t-call="web_planner.page">
+           <link rel="stylesheet" href="/church_app/static/css/style.css"/>
+           <link rel="stylesheet" href="/church_app/static/css/app.css"/>
+         <t t-set="title">ERP</t>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+         <title>controller</title>
+         <link type="image/x-icon" rel="shortcut icon" href="http://74.208.168.47:8069/web/image/res.company/1/debrand_favicon/"/>
+         <meta http-equiv="cleartype" content="on"/>
+         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
+         <meta name="apple-mobile-web-app-capable" content="yes"/>
+         <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"></link>
+<style type="text/css">
+
+  .btn.btn-lg {
+    padding: 0.99rem 1.7rem;
+    font-size: 20px;
+}
+.form-group .control-label, .form-group>label {
+    font-weight: 609;
+    color: #34395e;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+.navbar-collapse.collapse {
+    display: none;
+}
+@media (min-width: 768px)
+.navbar-collapse.collapse { 
+   display: none;
+}
+</style>
+
+   <div id="app">
+    <section class="section">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-6">
+            <div class="login-brand" style="margin-left: 190px;">
+              All smarth power erp
+            </div>
+            <div class="card card-primary" style="height: 75%;
+    width: 140%;">
+<!--              <div class="card-header">-->
+<!--                <h4>Register</h4>-->
+<!--              </div>-->
+              <div class="card-body">
+                  <div class="row">
+                    <div class="form-group col-6">
+                      <label for="frist_name">E R P</label>
+                      <a href="http://74.208.145.155:8069/web/login" target="_blank"> <button  class="btn btn-primary btn-lg btn-block">
+                        74.208.145.155:8069
+                    </button></a>
+                    </div>
+                    <div class="form-group col-6">
+                      <label for="last_name">C R M</label>
+                      <a href="http://50.21.183.64:8069/web/login" target="_blank"><button type="submit" class="btn btn-primary btn-lg btn-block">
+                        50.21.183.64:8069
+                      </button></a>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">NEW CONNECTION</label>
+                     <a href="http://74.208.145.137:8070/eedcform74" target="_blank"><button type="submit" class="btn btn-primary btn-lg btn-block">
+                       74.208.145.137:8070/eedcform74
+                     </button></a>
+                    <div class="invalid-feedback">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-6">
+                      <label for="password" class="d-block">BILL DOWNLOAD</label>
+                      <a href="http://74.208.145.137:8070/accthome" target="_blank"> <button type="submit" class="btn btn-primary btn-lg btn-block">
+                      74.208.145.137:8070/acctheme
+                      </button></a>
+                      <div id="pwindicator" class="pwindicator">
+                        <div class="bar"></div>
+                        <div class="label"></div>
+                      </div>
+                    </div>
+                    <div class="form-group col-6">
+                      <label for="password2" class="d-block">BILLING</label>
+                     <a href="http://74.208.168.47:8069/web/login" target="_blank"> <button type="submit" class="btn btn-primary btn-lg btn-block">
+                      74.208.168.47:8069
+                     </button></a>
+                    </div>
+                  </div>
+
+              </div>
+            </div>
+            <div class="simple-footer" style="margin-left: 240px;">
+              Powered by Sterling 2021
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+<br>
+</br>
+<br></br>
+
+
+              <!-- </t> -->
+              </t>
+            	</t>
+      </template>
+   </data>
+</odoo>

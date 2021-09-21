@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="church_app_list">
+      <field name="name">church_app_list</field>
+      <field name="model">church_app.church_app</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="street"/>
+          <field name="phone"/>
+          <field name="parish_id"/>    
+          <field name="cong_id2"/> 
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="church_app_form" model="ir.ui.view">
+        <field name="name">church_app_form</field>
+        <field name="model">church_app.church_app</field>
+        <field name="arch" type="xml">
+            <form string="Church Members">                
+                <sheet>
+                  <div class="oe_inline">
+                    <h2>
+                      <field name="f_name" nolabel="1"/>
+                    </h2>
+                    
+                    <br />
+                        <newline />
+                        <separator string="Personal Information" />
+                        <!-- <b>
+                            <field name="reg_code" readonly="1" />
+                        </b> -->
+                        <br />
+                        <field name="photo" widget="image"  class="oe_avatar oe_left" style="max-width:100px;max-height:117px;"/>
+                        <div class="oe_title">
+                            <group>
+                                <field name="title" placeholder="Title" nolabel="1" required="1" />
+                                <br />
+                                <field name="name" placeholder="First Name" nolabel="1" required="1" />
+                                <br />
+                                <field name="middle" placeholder="Middle Name" nolabel="1" />
+                                <br />
+                                <field name="last" placeholder="Last Name" nolabel="1" />
+                                <br />
+                                
+                            </group>
+                        </div>
+                    </div>
+                <group>
+                    <group string='Other Info'>
+                        <field name="arm" widget="selection"/>
+                        <field name="ordinance" widget="selection"/>
+                        <field name="marital" widget="selection"/>
+                        <field name="phone"/>  
+                        <field name="w_phone"/> 
+                        <field name="email" widget="email"/>
+                        <field name="street"/> 
+                        <field name="gender"/>  
+                        <field name="occupation"/>                     
+                    </group>
+                    <group string='Cell Info'>
+                        <field name="gen_id"/>
+                        <field name="syn_id"/>
+                        <field name="pres_id"/>  
+                        <field name="parish_id"/>    
+                        <field name="cong_id2"/>                  
+                    </group>
+                </group>         
+               
+                </sheet>             
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_church_view_kanban" model="ir.ui.view">
+            <field name="name">church_app_kanban</field>
+            <field name="model">church_app.church_app</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                              <!-- <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('church_app.church_app', 'image_medium', record.id.raw_value)"/>
+                              </div> -->
+                                <div>
+                                    <strong><field name="name"/></strong>
+                                </div>
+                                <div>
+                                    <strong><field name="last"/></strong>
+                                </div>
+                                <div>
+                                    <span><field name="cong_id2"/></span>
+                                </div>
+                                <div>
+                                    <span>ARM<field name="arm"/></span>
+                                    <span class="pull-right label label-default"><field name="phone"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="church_app.action_window">
+      <field name="name">PRESBYTERIAN CHURCH OF NIGERIA</field>
+      <field name="res_model">church_app.church_app</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="church_app.action_server">
+      <field name="name">church_app server</field>
+      <field name="model_id" ref="model_church_app_church_app"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="PCN" id="church_app.menu_root"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Members" id="church_app.menu_1" parent="church_app.menu_root"/>
+
+   
+    
+    <!-- actions -->
+    
+    <menuitem name="Members Info" id="church_app.menu_1_list" parent="church_app.menu_1"
+              action="church_app.action_window"/>
+    <!-- <menuitem name="Server to list" id="church_app" parent="church_app.menu_2"
+              action="church_app.action_server"/> -->
+    
+  </data>
+</odoo>
